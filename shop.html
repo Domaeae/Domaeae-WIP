@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaeae - Demos</title>
+    <!-- Local StyleSheet -->
+    <link rel="stylesheet" href="./src/css/master.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Ubuntu:wght@300;400;500&display=swap" 
+    rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Montserrat:wght@100;200;300;400;500&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <nav class="navbar">
+        <div class="brand-title">Domaeae.<span style="color: yellow;">de</span></div>
+
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="./kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="navbar-logins">
+            <ul>
+                <li>
+                    <a href="#" id="btn-sect-login">Einloggen <span class="navbar-space"></span><i
+                           class="fa-regular fa-user"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-dropdown">
+
+                <li><a href="login.html" data-text="Anmelden" class="hover-underline-animation"><i
+                           class="fa-solid fa-house-user"></i><span class="navbar-space"></span> Anmelden</a></li>
+
+                <li><a href="register.html" data-text="Registrieren" class="hover-underline-animation"><i
+                           class="fa-solid fa-square-plus"></i><span class="navbar-space"></span> Registrieren</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h2>Shop:</h2>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate vero molestias animi dolore modi officia
+            rem? Beatae illum quis cumque.</p>
+
+
+    </main>
+
+    <script src="https://kit.fontawesome.com/6e9562f63d.js" crossorigin="anonymous"></script>
+    <script src="src/js/jquery3.6.3.min.js"></script>
+    <script src="src/js/app.js"></script>
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0];
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+        const navbarLogins = document.getElementsByClassName('navbar-logins')[0];
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            navbarLogins.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
