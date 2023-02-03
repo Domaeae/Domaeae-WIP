@@ -128,57 +128,27 @@
             </a>
 
         </div> -->
-        <h1>GitHub Authentication Example:</h1>
-        <p><a href="#" id="login">Authenticate</a></p>
-        <p>Token: <span id="output-token">Not authenticated yet</span></p>
-        <p>
-            User emails:
-            <span id="output-email">Not authenticated yet</span>
-        </p>
 
-        <script>
-            const anchorTag = document.getElementById("login");
-            const outputToken = document.getElementById("output-token");
-            const outputEmail = document.getElementById("output-email");
-
-            anchorTag.addEventListener("click", (event) => {
-                event.preventDefault();
-
-                const authenticator = new netlify.default({});
-
-                authenticator.authenticate(
-                    // Set the OAuth provider and token scope
-                    // Provider can be "github", "gitlab", or "bitbucket"
-                    // The scopes available depend on your OAuth provider
-                    { provider: "github", scope: "user" },
-                    async function (error, data) {
-                        if (error) {
-                            outputToken.innerText =
-                                "Error Authenticating with GitHub: " + error;
-                        } else {
-                            outputToken.innerText =
-                                "Authenticated with GitHub. Access Token: " +
-                                data.token;
-                            outputEmail.innerText = await loadGitHubUserEmails(
-                                data.token
-                            );
-                        }
-                    }
-                );
-            });
-
-            async function loadGitHubUserEmails(token) {
-                return await fetch("https://api.github.com/user/emails", {
-                    headers: {
-                        Accept: "application/vnd.github.v3+json",
-                        Authorization: `token ${token}`,
-                    },
-                })
-                    .then((response) => response.json())
-                    .then((response) => JSON.stringify(response));
-            }
-        </script>
     </main>
+
+    <h1>GitHub Auth Demo:</h1>
+    <p><a href="#" id="login">Authenticate</a></p>
+    <p id="output"></p>
+    <script>
+        const anchorTag = document.getElementById('login');
+        const outputText = document.getElementById('output');
+
+        anchorTag.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const authenticator = new netlify.default({});
+
+            authenticator.authenticate({ provider: "github", scope: "user" }, (err, data) => {
+                err ? outputText.innerText = "Error Authenticating with GitHub: " + err :
+                    outputText.innerText = "Authenticated with GitHub. Access Token: " + data.token;
+            });
+        })
+    </script>
 
     <script src="https://kit.fontawesome.com/6e9562f63d.js" crossorigin="anonymous"></script>
     <script src="src/js/jquery3.6.3.min.js"></script>
