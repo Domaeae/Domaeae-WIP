@@ -16,7 +16,42 @@
     rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Montserrat:wght@100;200;300;400;500&display=swap"
           rel="stylesheet">
+    <style>
+        .card-container {
+            width: 75vw;
+            display: inline-flex;
+            margin: 0 55px;
+        }
 
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            /* margin: auto; */
+            text-align: center;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -36,8 +71,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <!-- <li><a href="./shop.html">Shop</a></li> -->
-                <li><a href="./projects.html">Projekte</a></li>
-
+                <li><a href="#">Projekte</a></li>
                 <li><a href="./kontakt.html">Kontakt</a></li>
             </ul>
         </div>
@@ -60,33 +94,34 @@
     </nav>
 
     <main class="main">
-        <h2>Kontakt:</h2>
-        <h3>Dominik Girrbach</h3>
-        <a href="mailto:support@domaeae.de">support@domaeae.de</a>
+        <h2>projects:</h2>
 
+        <div class="card-container">
 
-        <form name="contact" method="POST" data-netlify="true">
-            <p>
-                <label>Your Name: <input type="text" name="name" /></label>
-            </p>
-            <p>
-                <label>Your Email: <input type="email" name="email" /></label>
-            </p>
-            <p>
-                <label>Your Role: <select name="role[]" multiple>
-                        <option value="leader">Leader</option>
-                        <option value="follower">Follower</option>
-                    </select></label>
-            </p>
-            <p>
-                <label>Message: <textarea name="message"></textarea></label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </form>
-        [![Netlify
-        Status](https://api.netlify.com/api/v1/badges/c9ed6914-56a0-401f-834a-61495c588233/deploy-status)](https://app.netlify.com/sites/domaeae-wip/deploys)
+            <div class="card">
+                <img src="https://loremflickr.com/640/360" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/640/360" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/640/360" alt="Denim Jeans" style="width:100%">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+
+        </div>
+
     </main>
 
     <script src="https://kit.fontawesome.com/6e9562f63d.js" crossorigin="anonymous"></script>
@@ -100,27 +135,7 @@
         toggleButton.addEventListener('click', () => {
             navbarLinks.classList.toggle('active');
             navbarLogins.classList.toggle('active');
-        });
-
-        const handleSubmit = (event) => {
-            event.preventDefault();
-
-            const myForm = event.target;
-            const formData = new FormData(myForm);
-
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString(),
-            })
-                .then(() => alert("Thank you for your submission"))
-                .catch((error) => alert(error));
-        };
-
-        document
-            .querySelector("form")
-            .addEventListener("submit", handleSubmit);
-
+        })
     </script>
 </body>
 </html>
