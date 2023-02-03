@@ -133,6 +133,7 @@
             navbarLinks.classList.toggle('active');
             navbarLogins.classList.toggle('active');
         });
+
         // Open the modal
         netlifyIdentity.open();
 
@@ -143,26 +144,25 @@
         // Bind to events
         netlifyIdentity.on('init', user => console.log('init', user));
         netlifyIdentity.on('login', user => console.log('login', user));
-        netlifyIdentity.refresh().then((jwt) => console.log(jwt));
-
         netlifyIdentity.on('logout', () => console.log('Logged out'));
         netlifyIdentity.on('error', err => console.error('Error', err));
         netlifyIdentity.on('open', () => console.log('Widget opened'));
         netlifyIdentity.on('close', () => console.log('Widget closed'));
 
-        // // Unbind from events
-        // netlifyIdentity.off('login'); // t#o unbind all registered handlers
-        // // netlifyIdentity.off('login', handler); // to unbind a single handler
+        // Unbind from events
+        netlifyIdentity.off('login'); // to unbind all registered handlers
+        netlifyIdentity.off('login', handler); // to unbind a single handler
 
-        // // Close the modal
-        // netlifyIdentity.close();
+        // Close the modal
+        netlifyIdentity.close();
 
-        // // Log out the user
-        // netlifyIdentity.logout();
+        // Log out the user
+        netlifyIdentity.logout();
 
-        // // Refresh the user's JWT
-        // // Call in on('login') handler to ensure token refreshed after it expires (1hr)  
-        // // Note: this method returns a promise.
+        // Refresh the user's JWT
+        // Call in on('login') handler to ensure token refreshed after it expires (1hr)  
+        // Note: this method returns a promise.
+        netlifyIdentity.refresh().then((jwt) => console.log(jwt));
 
         // Change language
         netlifyIdentity.setLocale('en');

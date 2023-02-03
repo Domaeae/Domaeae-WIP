@@ -101,9 +101,7 @@
     <script src="src/js/jquery3.6.3.min.js"></script>
     <script src="src/js/app.js"></script>
     <script>
-        // Available after on('init') is invoked
-        const user = netlifyIdentity.currentUser();
-        netlifyIdentity.refresh().then((jwt) => console.log(jwt));
+
 
         const toggleButton = document.getElementsByClassName('toggle-button')[0];
         const navbarLinks = document.getElementsByClassName('navbar-links')[0];
