@@ -75,12 +75,12 @@
         <div class="kontaktformular">
 
 
-            <form name="Kontaktformular" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-                <p class="hidden">
+            <form name="Kontaktformular" method="POST" data-netlify="true">
+                <!-- <p class="hidden">
                     <label>
                         Don’t fill this out if you’re human: <input name="bot-field" />
                     </label>
-                </p>
+                </p> -->
 
                 <div class="form-group">
                     <p>
@@ -103,9 +103,13 @@
                     </p>
                 </div>
 
-                <p>
-                    <button type="submit" class="button">Versenden</button>
-                </p>
+                <div class="button-container">
+                    <p>
+                        <button type="submit" class="button"><span>Abschicken</span></button>
+                    </p>
+                </div>
+
+                <!-- <button type="submit" class="button">Versenden</button> -->
 
             </form>
         </div>
@@ -113,8 +117,6 @@
 
 
 
-        [![Netlify
-        Status](https://api.netlify.com/api/v1/badges/c9ed6914-56a0-401f-834a-61495c588233/deploy-status)](https://app.netlify.com/sites/domaeae-wip/deploys)
     </main>
 
     <script src="https://kit.fontawesome.com/6e9562f63d.js" crossorigin="anonymous"></script>
