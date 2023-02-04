@@ -75,8 +75,12 @@
         <div class="kontaktformular">
 
 
-            <form name="Kontaktformular" method="POST" data-netlify="true" data-netlify-recaptcha="true">
-
+            <form name="Kontaktformular" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                <p class="hidden">
+                    <label>
+                        Don’t fill this out if you’re human: <input name="bot-field" />
+                    </label>
+                </p>
 
                 <div class="form-group">
                     <p>
@@ -100,7 +104,7 @@
                 </div>
 
                 <p>
-                    <button type="submit">Send</button>
+                    <button type="submit" class="button">Versenden</button>
                 </p>
 
             </form>
