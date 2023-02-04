@@ -66,26 +66,111 @@
         <a href="mailto:support@domaeae.de">support@domaeae.de</a>
 
 
-        <form name="contact" method="POST" data-netlify="true">
-            <p>
-                <label>Your Name: <input type="text" name="name" /></label>
-            </p>
-            <p>
-                <label>Your Email: <input type="email" name="email" /></label>
-            </p>
-            <p>
-                <label>Your Role: <select name="role[]" multiple>
-                        <option value="leader">Leader</option>
-                        <option value="follower">Follower</option>
-                    </select></label>
-            </p>
-            <p>
-                <label>Message: <textarea name="message"></textarea></label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
-        </form>
+        <div class="m-hight" style="margin: 35px 0;">&nbsp;</div>
+
+        <h5 style="line-height: 0.7;">Oder benutzer das </h5>
+        <h2 style="margin: 0 0 20px; padding: 0; line-height: 1; text-decoration: underline;">Kontaktformular</h2>
+
+
+        <div class="kontaktformular">
+            <form>
+                <h1>Material Design formular</h1>
+                <div class="form-group">
+                    <select>
+                        <option>Value 1</option>
+                        <option>Value 2</option>
+                    </select>
+                    <label for="select" class="control-label">Selectbox</label><i class="bar"></i>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="name" required="required" />
+                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                </div>
+
+                <div class="form-group">
+                    <input type="name" required="required" />
+                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                </div>
+
+                <div class="form-group">
+                    <textarea required="required"></textarea>
+                    <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" checked="checked" /><i class="helper"></i>I'm the label from a checkbox
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" /><i class="helper"></i>I'm the label from a checkbox
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio" checked="checked" /><i class="helper"></i>I'm the label
+                            from a
+                            radio button
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="radio" /><i class="helper"></i>I'm the label from a radio button
+                        </label>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" /><i class="helper"></i>I'm the label from a checkbox
+                    </label>
+                </div>
+            </form>
+            <div class="button-container">
+                <button type="button" class="button"><span>Submit</span></button>
+            </div>
+        </div>
+
+        <div class="margin-temp" style="margin: 50px 0;">&nbsp;</div>
+
+
+        <div class="kontaktformular">
+
+
+            <form name="Kontaktformular" method="POST" data-netlify="true">
+
+                <div class="form-group">
+                    <input type="name" required="required" />
+                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                </div>
+                <div class="form-group">
+                    <input type="name" required="required" />
+                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                </div>
+                <div class="form-group">
+                    <textarea required="required"></textarea>
+                    <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
+                </div>
+                <p>
+                    <label>Your Name: <input type="text" name="name" /></label>
+                </p>
+                <p>
+                    <label>Your Email: <input type="email" name="email" /></label>
+                </p>
+                <p>
+                    <label>Message: <textarea name="message"></textarea></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+        </div>
+
+
+
+
         [![Netlify
         Status](https://api.netlify.com/api/v1/badges/c9ed6914-56a0-401f-834a-61495c588233/deploy-status)](https://app.netlify.com/sites/domaeae-wip/deploys)
     </main>
