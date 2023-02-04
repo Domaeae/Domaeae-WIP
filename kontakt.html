@@ -77,19 +77,29 @@
 
             <form name="Kontaktformular" method="POST" data-netlify="true">
 
+
                 <div class="form-group">
-                    <input type="name" required="required" />
-                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                    <p>
+                        <input type="name" name="name" required="required" autocomplete="name" />
+                        <label for="input" class="control-label">Name</label><i class="bar"></i>
+                    </p>
                 </div>
+
                 <div class="form-group">
-                    <input type="name" required="required" />
-                    <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+                    <p>
+                        <input type="text" required="required" autocomplete="email" />
+                        <label for="input" class="control-label">E-Mail Adresse</label><i class="bar"></i>
+                    </p>
                 </div>
+
                 <div class="form-group">
-                    <textarea required="required"></textarea>
-                    <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
+                    <p>
+                        <textarea required="required" autocomplete="off"></textarea>
+                        <label for="textarea" class="control-label">Deine Nachricht</label><i class="bar"></i>
+                    </p>
                 </div>
-                <p>
+
+                <!-- <p>
                     <label>Your Name: <input type="text" name="name" /></label>
                 </p>
                 <p>
@@ -97,7 +107,7 @@
                 </p>
                 <p>
                     <label>Message: <textarea name="message"></textarea></label>
-                </p>
+                </p> -->
                 <p>
                     <button type="submit">Send</button>
                 </p>
