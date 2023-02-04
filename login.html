@@ -12,12 +12,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Ubuntu:wght@300;400;500&display=swap" 
-    rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Montserrat:wght@100;200;300;400;500&display=swap"
           rel="stylesheet">
-    <script src="https://unpkg.com/netlify-auth-providers"></script>
-
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="manifest" href="/site.webmanifest">
 
 </head>
 
@@ -95,7 +93,9 @@
                     </div>
                 </a>
 
+
             </div>
+            <div data-netlify-identity-button style="width: 250px;">anmelden</div>
         </form>
 
         <!-- <div class="register-formular">
@@ -131,30 +131,37 @@
 
     </main>
 
-    <h1>GitHub Auth Demo:</h1>
-    <p><a href="#" id="login">Authenticate</a></p>
-    <p id="output"></p>
-    <script>
-        const anchorTag = document.getElementById('login');
-        const outputText = document.getElementById('output');
 
-        anchorTag.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const authenticator = new netlify.default({});
-
-            authenticator.authenticate({ provider: "github", scope: "user" }, (err, data) => {
-                err ? outputText.innerText = "Error Authenticating with GitHub: " + err :
-                    outputText.innerText = "Authenticated with GitHub. Access Token: " + data.token;
-            });
-        })
-    </script>
 
     <script src="https://kit.fontawesome.com/6e9562f63d.js" crossorigin="anonymous"></script>
     <script src="src/js/jquery3.6.3.min.js"></script>
     <script src="src/js/app.js"></script>
     <script>
+        // Open the modal
+        netlifyIdentity.open();
 
+        // Get the current user:
+        // Available after on('init') is invoked
+        const user = netlifyIdentity.currentUser();
+
+
+        // Bind to events
+        netlifyIdentity.on('init', user => console.log('init', user));
+        netlifyIdentity.on('login', user => console.log('login', user));
+        netlifyIdentity.on('logout', () => console.log('Logged out'));
+        netlifyIdentity.on('error', err => console.error('Error', err));
+        netlifyIdentity.on('open', () => console.log('Widget opened'));
+        netlifyIdentity.on('close', () => console.log('Widget closed'));
+
+        // Close the modal
+        netlifyIdentity.close();
+        // Refresh the user's JWT
+        // Call in on('login') handler to ensure token refreshed after it expires (1hr)  
+        // Note: this method returns a promise.
+        netlifyIdentity.refresh().then((jwt) => console.log(jwt));
+
+        // Change language
+        netlifyIdentity.setLocale('en');
 
         const toggleButton = document.getElementsByClassName('toggle-button')[0];
         const navbarLinks = document.getElementsByClassName('navbar-links')[0];
