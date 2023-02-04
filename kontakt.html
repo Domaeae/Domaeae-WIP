@@ -75,7 +75,7 @@
         <div class="kontaktformular">
 
 
-            <form name="Kontaktformular" method="POST" data-netlify="true">
+            <form name="Kontaktformular" method="POST" data-netlify="true" action="/pages/success">
 
 
                 <div class="form-group">
@@ -94,23 +94,15 @@
 
                 <div class="form-group">
                     <p>
-                        <textarea required="required" autocomplete="off"></textarea>
+                        <textarea required="required" name="message" autocomplete="off"></textarea>
                         <label for="textarea" class="control-label">Deine Nachricht</label><i class="bar"></i>
                     </p>
                 </div>
 
-                <!-- <p>
-                    <label>Your Name: <input type="text" name="name" /></label>
-                </p>
-                <p>
-                    <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-                <p>
-                    <label>Message: <textarea name="message"></textarea></label>
-                </p> -->
                 <p>
                     <button type="submit">Send</button>
                 </p>
+
             </form>
         </div>
 
